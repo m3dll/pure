@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Patch Note v1.1 — Pure FR</title>
+
+  <!-- ===== Open Graph (aperçu Discord / réseaux) ===== -->
+  <!-- ⚠️ Remplace l'URL ci-dessous par celle de ton GitHub Pages une fois en ligne -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Patch Note v1.1" />
+  <meta property="og:description" content="__DESCRIPTION_A_REMPLIR__" />
+  <meta property="og:image" content="https://TONPSEUDO.github.io/patch-note/logo.png" />
+  <meta property="og:url" content="https://TONPSEUDO.github.io/patch-note/" />
+  <meta property="og:site_name" content="Pure FR" />
+  <meta name="theme-color" content="#7c1020" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Patch Note v1.1" />
+  <meta name="twitter:description" content="__DESCRIPTION_A_REMPLIR__" />
+  <meta name="twitter:image" content="https://TONPSEUDO.github.io/patch-note/logo.png" />
+
+  <link rel="icon" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg:        #0b0c0f;
+      --bg-soft:   #121419;
+      --card:      #15171d;
+      --line:      #23262e;
+      --ink:       #e8eaf0;
+      --ink-soft:  #aab0bd;
+      --ink-faint: #767d8c;
+      --accent:    #c0142e;   /* rouge Pure */
+      --accent-2:  #7c1020;   /* grenat profond */
+      --blue:      #5b9bd5;   /* bleu des titres du doc */
+      --blue-soft: #7fb1e0;
+      --radius:    16px;
+      --maxw:      820px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(1200px 600px at 50% -200px, rgba(192,20,46,0.18), transparent 70%),
+        var(--bg);
+      color: var(--ink);
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+    /* ===== Hero ===== */
+    header.hero {
+      text-align: center;
+      padding: 88px 24px 56px;
+    }
+    .logo {
+      width: 104px; height: 104px;
+      border-radius: 24px;
+      box-shadow: 0 18px 50px rgba(192,20,46,0.35), 0 4px 14px rgba(0,0,0,0.5);
+      margin-bottom: 28px;
+    }
+    .eyebrow {
+      font-size: 13px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    h1.title {
+      font-family: "Sora", sans-serif;
+      font-size: clamp(34px, 7vw, 56px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 0 0 16px;
+      line-height: 1.05;
+    }
+    .lede {
+      max-width: 540px;
+      margin: 0 auto;
+      color: var(--ink-soft);
+      font-size: 17px;
+    }
+    .rule {
+      width: 64px; height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      border-radius: 3px;
+      margin: 36px auto 0;
+    }
+
+    /* ===== Sections ===== */
+    main { padding-bottom: 96px; }
+
+    .section { margin-top: 56px; }
+    .section > h2 {
+      font-family: "Sora", sans-serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 14px;
+      margin: 0 0 28px;
+      border-bottom: 1px solid var(--line);
+    }
+    .section > h2 .emoji { font-size: 26px; }
+
+    /* sous-titre type "Métiers" / "Braquages et vols" — bleu comme le doc */
+    .subhead {
+      font-family: "Sora", sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--blue-soft);
+      letter-spacing: 0.01em;
+      margin: 32px 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    /* carte d'un métier (légal) */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      margin-bottom: 14px;
+    }
+    .card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0 0 8px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+    .card p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 15px;
+    }
+    .card .tag {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 3px 10px;
+    }
+
+    /* liste à puces (vie de joueur / illégal) */
+    ul.feat {
+      list-style: none;
+      margin: 0 0 8px;
+      padding: 0;
+    }
+    ul.feat li {
+      position: relative;
+      padding: 11px 0 11px 18px;
+      border-bottom: 1px solid var(--line);
+      color: var(--ink-soft);
+      font-size: 15px;
+    }
+    ul.feat li:last-child { border-bottom: none; }
+    ul.feat li::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 19px;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    ul.feat li b {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    /* accent grenat pour la section illégal */
+    .section.illegal > h2 { border-bottom-color: rgba(192,20,46,0.35); }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      padding: 48px 24px 80px;
+      color: var(--ink-faint);
+      border-top: 1px solid var(--line);
+    }
+    footer .closing {
+      font-style: italic;
+      color: var(--ink-soft);
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    footer .sig {
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 520px) {
+      header.hero { padding-top: 64px; }
+      .card { padding: 16px 18px; }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .logo, .card { transition: transform .25s ease, box-shadow .25s ease; }
+      .card:hover { transform: translateY(-2px); border-color: #2c303a; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <img class="logo" src="logo.png" alt="Logo Pure FR" />
+    <div class="eyebrow">Pure FR</div>
+    <h1 class="title">Patch Note v1.1</h1>
+    <p class="lede">Métiers, vie de joueur et activités du serveur — tout ce qui vous attend en ville.</p>
+    <div class="rule"></div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- ===================== LÉGAL ===================== -->
+    <section class="section">
+      <h2><span class="emoji">⚖️</span> Légal</h2>
+
+      <div class="subhead">💼 Métiers</div>
+
+      <div class="card">
+        <h3>👮 Police (LSPD)</h3>
+        <p>Patrouille, arrestations et menottage, fouilles et saisies de preuves. Accès au MDT (fiches, recherches, casiers), au dispatch en temps réel, aux gyrophares personnalisables et au radar Wraith ARS 2X (lecture de plaques, alerte 10-38 automatique). Casiers personnels verrouillés par code PIN au commissariat.</p>
+      </div>
+
+      <div class="card">
+        <h3>🚑 Ambulancier / EMS</h3>
+        <p>Système de blessures, de réanimation et de soin automatique. Prise en charge des morts/inconscients et facturation des soins.</p>
+        <span class="tag">Pas encore jouable</span>
+      </div>
+
+      <div class="card">
+        <h3>🔧 Mécanicien</h3>
+        <p>Réparation et customisation des véhicules. Achat de marchandises en gros (kits de réparation, etc.) via un shop grossiste réservé au métier.</p>
+      </div>
+
+      <div class="card">
+        <h3>🚗 Premium Deluxe Motorsport (PDM)</h3>
+        <p>Vente de véhicules via un catalogue NUI moderne (filtres prix/marque/catégorie, images, fiches détaillées, nombre de places et coffre affichés, prévisualisation et test drive). Les employés PDM peuvent faire des doubles de clés et ré-éditer une carte grise chez le serrurier.</p>
+      </div>
+
+      <div class="card">
+        <h3>🏠 Agent immobilier</h3>
+        <p>Vente de maisons et gestion des propriétés. Pose de coffres à code PIN pour les habitants.</p>
+      </div>
+
+      <div class="card">
+        <h3>🏪 LTD / Épicerie (Strawberry)</h3>
+        <p>Réapprovisionnement en gros du shop pour la revente.</p>
+      </div>
+
+      <div class="card">
+        <h3>🚌 Chauffeur de bus</h3>
+        <p>Tournées de ramassage de PNJ autour de la map contre rémunération. Job en intérim (voir règlement).</p>
+      </div>
+
+      <div class="card">
+        <h3>🎤 Animateur</h3>
+        <p>Menu dédié (F9) pour les events : soigner, réanimer et distribuer des items.</p>
+      </div>
+
+      <div class="card">
+        <h3>💵 Patrons d’entreprise</h3>
+        <p>Gestion des employés (embauche / renvoi), compte société en banque, facturation entre joueurs et paye automatique configurable depuis le téléphone (LB Phone · Services) : activation toutes les 15 min et montant réglable par grade.</p>
+      </div>
+    </section>
+
+    <!-- ===================== VIE DE JOUEUR ===================== -->
+    <section class="section">
+      <h2><span class="emoji">🧍</span> Vie de joueur</h2>
+
+      <div class="subhead">📱 Quotidien et gestion</div>
+      <ul class="feat">
+        <li><b>📱 Téléphone (LB Phone)</b> — Téléphone complet avec apps, contacts, messages et carte (Maps) affichant les commerces.</li>
+        <li><b>🏦 Banque</b> — Comptes bancaires, dépôts/retraits, DAB en ville, possibilité de bloquer l’accès bancaire depuis un téléphone volé, etc.</li>
+        <li><b>🧑‍🤝‍🧑 Multi-personnages</b> — Créez et gérez plusieurs personnages.</li>
+        <li><b>👕 Apparence & vêtements</b> — Personnalisation complète du perso, penderie, aperçu 3D et gestion des tenues.</li>
+      </ul>
+
+      <div class="subhead">🚙 Véhicules et logement</div>
+      <ul class="feat">
+        <li><b>🚙 Garages & véhicules</b> — Garages modernes et véhicules personnels persistants : votre voiture reste là où vous la garez, même après déconnexion (plus de mise en fourrière automatique au logout). Clés de véhicule, clignotants et warning, appel de phares, changement de siège au pavé numérique, bâche de véhicule.</li>
+        <li><b>🏡 Logement & déco</b> — Achat/aménagement de maisons avec meubles, posters et graffitis décoratifs, coffres PIN.</li>
+      </ul>
+
+      <div class="subhead">🍔 Confort et immersion</div>
+      <ul class="feat">
+        <li><b>🍔 Survie & HUD</b> — Barres de faim/soif style GTA, radar étendu.</li>
+        <li><b>😴 Confort</b> — Votre perso reste en ville après votre déconnexion (il sauvegarde même la dernière emote !), mode photo libre, GPS tracker, écrans TV plaçables, renommage d’items.</li>
+        <li><b>🖐 Détails immersifs</b> — Choix de la main directrice (droitier/gaucher) à la création, swap d’épaule à la visée, recul d’arme réaliste, arme visible dans le dos, minimap affichée uniquement en véhicule ou avec un téléphone, commande /wam pour dégainer ses armes de manière différente.</li>
+        <li><b>🪙 Fun</b> — Pile ou face visible par tous, scoreboard, météo et heure synchronisées.</li>
+      </ul>
+    </section>
+
+    <!-- ===================== ILLÉGAL ===================== -->
+    <section class="section illegal">
+      <h2><span class="emoji">🚨</span> Illégal</h2>
+
+      <div class="subhead">💰 Braquages et vols</div>
+      <ul class="feat">
+        <li><b>🏦 Braquage de banque</b> — Casse des banques et sabotage des centrales électriques.</li>
+        <li><b>💎 Bijouterie</b> — Braquage des bijouteries pour un butin à revendre.</li>
+        <li><b>🏪 Magasins</b> — Braquage de certains LTD de la map (argent et items).</li>
+        <li><b>🚚 G6</b> — Braquage de G6 pour cash et marchandises.</li>
+        <li><b>🏚 Cambriolage de maisons</b> — Pillage de propriétés pour des objets à écouler.</li>
+        <li><b>🏧 Vol de DAB</b> — Forcez les distributeurs automatiques de billets.</li>
+        <li><b>🚗 Vol de véhicules</b> — Crochetage (lockpick), carjacking à main armée et vol de clés sur le conducteur. Les véhicules volés deviennent persistants (jusqu’au reboot).</li>
+      </ul>
+
+      <div class="subhead">🔫 Trafics et criminalité</div>
+      <ul class="feat">
+        <li><b>💊 Drogues</b> — à découvrir en jeu.</li>
+        <li><b>🔫 Marché noir & armes</b> — Vendeurs d’armes et accessoires planqués, stashs protégés par code PIN, drive-by pour les passagers.</li>
+        <li><b>🎭 Discrétion</b> — Cagoule utilisable sur un autre joueur pour l’empêcher de voir (la carte est également désactivée s’il n’a pas de téléphone dans l’inventaire, pour plus d’immersion), possibilité de se cacher dans le coffre d’un véhicule, et nouvel objet caméra espion pour surveiller.</li>
+        <li><b>🔓 Crochetage</b> — à découvrir en jeu.</li>
+        <li><b>💋 Prostitution</b> — à découvrir en jeu.</li>
+        <li><b>🔥 Feu réaliste</b> — Les incendies (molotov) sont dynamiques : le feu se propage, peut démarrer aléatoirement et doit être éteint par la police (extincteur).</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="closing">Bon jeu, et rendez-vous en ville ! 🌆</div>
+    <div class="sig">Pure FR</div>
+  </footer>
+
+</body>
+</html>
